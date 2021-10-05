@@ -1,0 +1,18 @@
+graph {
+	graph [bgcolor="#333333" fontcolor=white fontsize=16 label="Network Map" rankdir=BT]
+	node [color="#006699" fillcolor="#006699" fontcolor=white fontname=Helvetica margin=0.4 shape=box style=filled]
+	edge [arrowhead=open color=green fontcolor=white fontname=Courier fontsize=14 style=dashed]
+	R4
+	R1
+	R5
+	R3
+	R2
+	R3 -- R1 [label="            " headlabel="Fa0/1" taillabel="Fa0/1"]
+	R2 -- R1 [label="            " headlabel="Fa3/0" taillabel="Fa3/0"]
+	R2 -- R1 [label="            " headlabel="Fa0/1" taillabel="Fa1/0"]
+	R4 -- R1 [label="            " headlabel="Fa4/0" taillabel="Fa4/0"]
+	R2 -- R3 [label="            " headlabel="Fa0/0" taillabel="Fa0/0"]
+	R5 -- R3 [label="            " headlabel="Fa3/0" taillabel="Fa4/0"]
+	R4 -- R2 [label="            " headlabel="Fa1/0" taillabel="Fa1/0"]
+	R4 -- R5 [label="            " headlabel="Fa0/1" taillabel="Fa0/1"]
+}

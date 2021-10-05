@@ -1,0 +1,12 @@
+// A Round Graph
+digraph {
+	A [label=Alex]
+	B [label=Rishu]
+	C [label=Mohe]
+	D [label=Satyam]
+	A -> B
+	A -> C
+	A -> D
+	B -> C [constraint=false]
+	C -> D [label="            " constraint=false headlabel="e0/1" taillabel="e0/2"]
+}

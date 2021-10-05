@@ -1,0 +1,40 @@
+hostname {{ name }}
+interface Loopback0
+ ip address 10.0.0.{{ id }} 255.255.255.255
+!
+{% for vlan, name in vlans.items() %}
+vlan {{ vlan }}
+ name {{ name }}
+{% endfor %}
+
+{% for intf, params in trunks | dictsort %}
+{% set vlans = params.vlans %}
+{% set action = params.action %}
+interface {{ intf }}
+{% if vlans is iterable %}
+ {% if action == 'add' %}
+ switchport trunk allowed vlan add {{ vlans | join(',') }}
+ {% elif action == 'delete' %}
+ switchport trunk allowed vlan remove {{ vlans | join(',') }}
+ {% else %}
+ switchport trunk allowed vlan {{ vlans | join(',') }}
+ {% endif %}
+{% else %}
+ {% if action == 'add' %}
+ switchport trunk allowed vlan add {{ vlans }}
+ {% elif action == 'delete' %}
+ switchport trunk allowed vlan remove {{ vlans }}
+ {% else %}
+ switchport trunk allowed vlan {{ vlans }}
+ {% endif %}
+{% endif %}
+{% endfor %}
+!
+{% if ospf %}
+router ospf 1
+ router-id 10.0.0.{{ id }}
+ auto-cost reference-bandwidth {{ref_bw | default(50000,true)}}
+ {% for networks in ospf %}
+ network {{ networks.network }} area {{ networks.area }}
+ {% endfor %}
+{% endif %}

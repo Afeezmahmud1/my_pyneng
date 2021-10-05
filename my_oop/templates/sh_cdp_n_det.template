@@ -1,0 +1,15 @@
+Value Filldown local_host (\S+)
+Value dest_host (\S+)
+Value mngmnt_ip (.*)
+Value platform (.*)
+Value Required local_port (.*)
+Value remote_port (.*)
+Value ios_version (\S+)
+
+Start
+  ^${local_host}[>#].*
+  ^Device ID: ${dest_host}
+  ^\s+IP address: ${mngmnt_ip}
+  ^Platform: ${platform},
+  ^Interface: ${local_port},  Port ID \(outgoing port\): ${remote_port}
+  ^Cisco IOS Software.*Version ${ios_version}, -> Record

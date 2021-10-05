@@ -1,0 +1,10 @@
+Value Filldown network (\S+)
+Value Filldown mask (\d+)
+Value Required distance (\d+)
+Value metric (\d+)
+Value nexthop (\S+)
+
+Start
+  ^O +${network}/${mask}\s\[${distance}\/${metric}\]\svia\s${nexthop}, -> Record
+  ^\s+\[${distance}\/${metric}\]\svia\s${nexthop}, -> Record
+

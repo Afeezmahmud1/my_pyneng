@@ -1,0 +1,40 @@
+
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+DEVNET_R3(config)#ip acess-list extended DEVNET
+                       ^
+% Invalid input detected at '^' marker.
+
+DEVNET_R3(config)#permit ip any any
+                     ^
+% Invalid input detected at '^' marker.
+
+DEVNET_R3(config)#end
+DEVNET_R3#
+
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+DEVNET_SW2(config)#vlan 11
+DEVNET_SW2(config-vlan)#name VLAN-11
+DEVNET_SW2(config-vlan)#end
+DEVNET_SW2#
+
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+DEVNET_R3(config)#ip acess-list extended DEVNET
+                       ^
+% Invalid input detected at '^' marker.
+
+DEVNET_R3(config)#permit ip any any
+                     ^
+% Invalid input detected at '^' marker.
+
+DEVNET_R3(config)#end
+DEVNET_R3#
+
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+DEVNET_SW2(config)#vlan 11
+DEVNET_SW2(config-vlan)#name VLAN-11
+DEVNET_SW2(config-vlan)#end
+DEVNET_SW2#

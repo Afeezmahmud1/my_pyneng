@@ -1,0 +1,3 @@
+DEBUG:root:Debug level message: \ n {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <_frozen_importlib_external.SourceFileLoader object at 0x7fc0919e1550>, '__spec__': None, '__annotations__': {}, '__builtins__': <module 'builtins' (built-in)>, '__file__': 'logging_basic_1.py', '__cached__': None, 'logging': <module 'logging' from '/usr/lib/python3.7/logging/__init__.py'>} 
+INFO:root:Message level Info
+WARNING:root:Message level Warning

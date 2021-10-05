@@ -1,0 +1,31 @@
+ref_bw: 10000
+name: R3
+id: 3
+vlans:
+      10: Marketing
+      20: Voice
+      30: Management
+
+trunks:
+       Fa0/1:
+             action: add
+             vlans: 
+                   - 10
+                   - 20
+       Fa0/2:
+             action: only
+             vlans: 
+                   - 30
+                   - 40
+       Fa0/3:
+             action: delete
+             vlans: 11 
+                   
+
+ospf:
+     - network: 10.0.1.0 0.0.0.255
+       area: 0
+     - network: 10.0.2.0 0.0.0.255
+       area: 2
+     - network: 10.1.1.0 0.0.0.255
+       area: 0

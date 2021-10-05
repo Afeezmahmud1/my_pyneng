@@ -1,0 +1,7 @@
+bgp:
+   local_as: 100
+   ibgp_neighbors:
+                 - 10.0.0.2
+                 - 10.0.0.3
+                 - 10.1.1.1
+   loopback: lo100
